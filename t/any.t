@@ -3,7 +3,7 @@
 use strict;
 use Test;
 
-BEGIN { plan tests => 4 }
+BEGIN { plan tests => 8 }
 
 use Regexp::Match::Any;
 
@@ -37,6 +37,12 @@ my $d = "kungfuftr\@cpan.org";
 # Do some testing!
 #------------------
 ok($a =~ match_any(@a));
-ok(not $b=~ match_any(@b));
+ok(not $b =~ match_any(@b));
 ok($c =~ match_any(@c));
 ok($d =~ match_any(@d));
+
+# Same again but with references
+ok($a =~ match_any(\@a));
+ok(not $b =~ match_any(\@b));
+ok($c =~ match_any(\@c));
+ok($d =~ match_any(\@d));
