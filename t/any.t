@@ -3,7 +3,7 @@
 use strict;
 use Test;
 
-BEGIN { plan tests => 8 }
+BEGIN { plan tests => 4 }
 
 use Regexp::Match::Any;
 
@@ -12,13 +12,13 @@ use Regexp::Match::Any;
 # Simple word match
 #-------------------
 my @a = qw(foo bar wibble);
-my $a = "foo";
+my $a = "Foo";
 
 #-----------------------
 # Simple word not match
 #-----------------------
 my @b = qw(foo bar wibble);
-my $b = "not";
+my $b = "Not";
 
 #--------------
 # Simple match
@@ -36,13 +36,8 @@ my $d = "kungfuftr\@cpan.org";
 #------------------
 # Do some testing!
 #------------------
-ok($a =~ match_any(@a));
-ok(not $b =~ match_any(@b));
-ok($c =~ match_any(@c));
-ok($d =~ match_any(@d));
-
-# Same again but with references
-ok($a =~ match_any(\@a));
-ok(not $b =~ match_any(\@b));
+ok($a =~ match_any(\@a,'i'));
+ok(not $b =~ match_any(\@b,'i'));
 ok($c =~ match_any(\@c));
 ok($d =~ match_any(\@d));
+
