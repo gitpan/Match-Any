@@ -1,0 +1,51 @@
+NAME
+
+  Regexp::Match::Any - Match many regexes against a variable
+
+
+SYNOPSIS
+
+  use Regexp::Match::Any;
+  my @array = qw(foo bar wibble);
+  my $var = "foo";
+  if($var =~ match_any(@array)){
+    print "It matched\n";
+  }else{
+    print "It didn't match\n";
+  }
+
+
+DESCRIPTION
+
+  This module allows you to pass the match_any() function an array of regexs and then will
+  match the variable against any of them. This is quite handy for things such as swear word 
+  listings or to use regexs stored within a file or database.
+
+
+AUTHOR
+
+  Scott McWhirter <scott@kungfuftr.com>
+
+
+COPYRIGHT
+
+  Copyright (c) 2001, Scott McWhirter. All Rights Reserved.  This module is
+  free software. It may be used, redistributed and/or modified under the
+  terms of the Perl Artistic License. 
+  (see http://www.perl.com/perl/misc/Artistic.html)
+
+
+HOW DO I INSTALL IT?
+
+  To install this module, cd to the directory that contains this README
+  file and type the following:
+
+    perl Makefile.PL
+    make test
+    make install
+
+  To install this module into a specific directory, do:
+  perl Makefile.PL PREFIX=/name/of/the/directory
+  ...the rest is the same...
+
+  Please also read the perlmodinstall man page, if available.
